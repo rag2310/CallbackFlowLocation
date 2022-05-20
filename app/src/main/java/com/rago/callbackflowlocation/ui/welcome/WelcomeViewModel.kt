@@ -17,12 +17,12 @@ class WelcomeViewModel @Inject constructor(
     val allPermissions: StateFlow<Boolean> = _allPermissions
 
     fun checkPermission(onNav: () -> Unit) {
+        _allPermissions.value = true
         when {
             !checkPermissions.allPermissionsGranted() -> {
                 _allPermissions.value = false
             }
             else -> {
-                _allPermissions.value = true
                 onNav()
             }
         }

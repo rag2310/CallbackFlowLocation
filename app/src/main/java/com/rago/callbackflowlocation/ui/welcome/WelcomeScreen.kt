@@ -25,8 +25,6 @@ fun WelcomeScreen(
     onNav: () -> Unit
 ) {
 
-
-
     val allPermission by welcomeViewModel.allPermissions.collectAsState()
 
     WelcomeContent(onPermission = {
@@ -44,7 +42,7 @@ fun WelcomeContent(
 ) {
     val launcher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
-    ) { _ ->
+    ) {
         onPermission()
     }
 

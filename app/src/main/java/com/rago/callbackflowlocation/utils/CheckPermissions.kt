@@ -14,9 +14,9 @@ class CheckPermissions @Inject constructor(private val context: Context) {
             mutableListOf(
                 Manifest.permission.ACCESS_FINE_LOCATION
             ).apply {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     add(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
-                }
+                }*/
                 add(Manifest.permission.ACCESS_COARSE_LOCATION)
             }.toTypedArray()
     }
